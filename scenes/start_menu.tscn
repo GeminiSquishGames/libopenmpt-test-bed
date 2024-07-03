@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://p6884heep374"]
 
-[ext_resource type="FontFile" uid="uid://bolfa5p33qmbq" path="res://SMILEBASIC.ttf" id="1_ggn3g"]
-[ext_resource type="FontFile" uid="uid://c7gjq8b20mou5" path="res://MOTHER-2-GIGU-NO-GYAKUSHU.TTF" id="1_jfo16"]
+[ext_resource type="FontFile" uid="uid://bolfa5p33qmbq" path="res://fonts/SMILEBASIC.ttf" id="1_ggn3g"]
+[ext_resource type="FontFile" uid="uid://c7gjq8b20mou5" path="res://fonts/MOTHER-2-GIGU-NO-GYAKUSHU.TTF" id="1_jfo16"]
 [ext_resource type="AudioStream" uid="uid://esrwu422ubfx" path="res://bgm/title.mptm" id="2_o8o6s"]
-[ext_resource type="Script" path="res://lvl/sfx_player.gd" id="3_yqru5"]
+[ext_resource type="Script" path="res://scenes/sfx_player.gd" id="3_yqru5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_37777"]
 font = ExtResource("1_ggn3g")

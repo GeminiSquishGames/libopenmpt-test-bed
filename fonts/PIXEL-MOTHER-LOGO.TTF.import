@@ -2,26 +2,26 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c7gjq8b20mou5"
-path="res://.godot/imported/MOTHER-2-GIGU-NO-GYAKUSHU.TTF-74766b2b241ea082ed063b65aec8224c.fontdata"
+uid="uid://cktitaetclv53"
+path="res://.godot/imported/PIXEL-MOTHER-LOGO.TTF-77042f5708fe9142152973b05873e403.fontdata"
 
 [deps]
 
-source_file="res://MOTHER-2-GIGU-NO-GYAKUSHU.TTF"
-dest_files=["res://.godot/imported/MOTHER-2-GIGU-NO-GYAKUSHU.TTF-74766b2b241ea082ed063b65aec8224c.fontdata"]
+source_file="res://fonts/PIXEL-MOTHER-LOGO.TTF"
+dest_files=["res://.godot/imported/PIXEL-MOTHER-LOGO.TTF-77042f5708fe9142152973b05873e403.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
-generate_mipmaps=false
+antialiasing=1
+generate_mipmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=1
-subpixel_positioning=0
+hinting=2
+subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
@@ -31,7 +31,8 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0)
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
 }]
 language_support={}
 script_support={}

@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="BornOver"
-run/main_scene="res://lvl/title.tscn"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://bgm/default_bus_layout.tres"
 
 [display]
 

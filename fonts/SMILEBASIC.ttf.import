@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bolfa5p33qmbq"
-path="res://.godot/imported/SMILEBASIC.ttf-3f53e01ecbcee9afe78d6d16104af2fd.fontdata"
+path="res://.godot/imported/SMILEBASIC.ttf-4d464eef633271d7453e7bb6f313d4b3.fontdata"
 
 [deps]
 
-source_file="res://SMILEBASIC.ttf"
-dest_files=["res://.godot/imported/SMILEBASIC.ttf-3f53e01ecbcee9afe78d6d16104af2fd.fontdata"]
+source_file="res://fonts/SMILEBASIC.ttf"
+dest_files=["res://.godot/imported/SMILEBASIC.ttf-4d464eef633271d7453e7bb6f313d4b3.fontdata"]
 
 [params]
 
