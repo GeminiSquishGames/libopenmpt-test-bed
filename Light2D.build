@@ -1,0 +1,37 @@
+{
+	"disabled_build_options": {
+		"disable_3d": true,
+		"disable_3d_physics": true,
+		"openxr": false,
+		"vulkan": false
+	},
+	"disabled_classes": [
+		"GLTFAccessor",
+		"GLTFAnimation",
+		"GLTFBufferView",
+		"GLTFCamera",
+		"GLTFDocument",
+		"GLTFDocumentExtension",
+		"GLTFLight",
+		"GLTFMesh",
+		"GLTFNode",
+		"GLTFPhysicsBody",
+		"GLTFPhysicsShape",
+		"GLTFSkeleton",
+		"GLTFSkin",
+		"GLTFSpecGloss",
+		"GLTFState",
+		"GLTFTexture",
+		"GLTFTextureSampler",
+		"Mesh",
+		"MeshLibrary",
+		"MultiMesh",
+		"NavigationMesh",
+		"Node3D",
+		"Occluder3D",
+		"Shape3D",
+		"VoxelGIData",
+		"World3D"
+	],
+	"type": "build_profile"
+}

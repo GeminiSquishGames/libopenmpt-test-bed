@@ -1,0 +1,28 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://d4cwbp0rxyaat"]
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_nplr8"]
+resource_name = "Compressor"
+threshold = -12.0
+ratio = 8.0
+attack_us = 645.0
+release_ms = 20.0
+sidechain = &"TrackerMusic"
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_yojgf"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = 3.0
+band_db/320_hz = 3.0
+band_db/10000_hz = 3.0
+
+[resource]
+bus/1/name = &"TrackerMusic"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -2.91905
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectCompressor_nplr8")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectEQ_yojgf")
+bus/1/effect/1/enabled = true

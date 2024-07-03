@@ -1,0 +1,16 @@
+[remap]
+
+importer="dudejoe870.openmptimporter"
+type="AudioStreamMPT"
+uid="uid://dtwm0cui264ok"
+path="res://.godot/imported/inst_only_01.mptm-3cf8823f74a278c829779b337a9b295d.res"
+
+[deps]
+
+source_file="res://sfx/inst_only_01.mptm"
+dest_files=["res://.godot/imported/inst_only_01.mptm-3cf8823f74a278c829779b337a9b295d.res"]
+
+[params]
+
+force/mono=false
+playback/loop_mode=1

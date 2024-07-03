@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://p6884heep374"]
+
+[ext_resource type="FontFile" uid="uid://bolfa5p33qmbq" path="res://SMILEBASIC.ttf" id="1_ggn3g"]
+[ext_resource type="FontFile" uid="uid://c7gjq8b20mou5" path="res://MOTHER-2-GIGU-NO-GYAKUSHU.TTF" id="1_jfo16"]
+[ext_resource type="AudioStream" uid="uid://esrwu422ubfx" path="res://bgm/title.mptm" id="2_o8o6s"]
+[ext_resource type="Script" path="res://lvl/sfx_player.gd" id="3_yqru5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_37777"]
+font = ExtResource("1_ggn3g")
+font_size = 8
+
+[node name="StartMenu" type="Node2D"]
+position = Vector2(264, 80)
+metadata/_edit_vertical_guides_ = [472.0]
+
+[node name="Background" type="Panel" parent="."]
+offset_left = -32.0
+offset_right = 448.0
+offset_bottom = 272.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Panel" parent="Background"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 8.0
+offset_right = 400.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackerDisplay" type="Label" parent="Background/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -60.0
+offset_right = 88.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+text = "
+"
+label_settings = SubResource("LabelSettings_37777")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackerDisplay2" type="Label" parent="Background/Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0789474
+anchor_top = 0.564516
+anchor_right = 0.868421
+anchor_bottom = 1.03226
+offset_left = -88.0
+offset_top = -28.0
+offset_right = 88.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 6
+text = "
+"
+label_settings = SubResource("LabelSettings_37777")
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Background/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -116.0
+offset_right = 56.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Plays stream from first subsong
+=AudioStreamPlayer.play()"
+theme_override_fonts/font = ExtResource("1_jfo16")
+theme_override_font_sizes/font_size = 8
+text = "😀 play song
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Background/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -84.0
+offset_right = 64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Plays next subsong
+=playback.select_subsong(current_subsong)
+
+returns if no playback"
+theme_override_fonts/font = ExtResource("1_jfo16")
+theme_override_font_sizes/font_size = 8
+text = "switch subsong"
+metadata/_edit_use_anchors_ = true
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o8o6s")
+script = ExtResource("3_yqru5")
+
+[connection signal="pressed" from="Background/Menu/Button" to="SongPlayer" method="play_song"]
+[connection signal="pressed" from="Background/Menu/Button2" to="SongPlayer" method="next_subsong"]

@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://eiwm7b3cfv73"]
+
+[ext_resource type="Texture2D" uid="uid://vjcik16i6hgp" path="res://img/Title32.png" id="1_msbx2"]
+[ext_resource type="Script" path="res://lvl/start_game.gd" id="1_qpx2a"]
+[ext_resource type="AudioStream" uid="uid://esrwu422ubfx" path="res://bgm/title.mptm" id="2_1dml1"]
+[ext_resource type="FontFile" uid="uid://cktitaetclv53" path="res://PIXEL-MOTHER-LOGO.TTF" id="2_e38oj"]
+[ext_resource type="Script" path="res://lvl/modulate_cycle_hard.gd" id="2_vofm3"]
+[ext_resource type="AudioStream" uid="uid://dchmhji6e50w2" path="res://sfx/start_sfx.mptm" id="4_knsan"]
+[ext_resource type="Script" path="res://lvl/basic_bgm_control.gd" id="7_axo7j"]
+
+[sub_resource type="Theme" id="Theme_haq8a"]
+default_font = ExtResource("2_e38oj")
+default_font_size = 8
+TooltipLabel/font_sizes/font_size = 8
+TooltipLabel/fonts/font = ExtResource("2_e38oj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfn72"]
+content_margin_top = 2.0
+bg_color = Color(0.5, 0.5, 0.5, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iumlh"]
+content_margin_top = 2.0
+bg_color = Color(0.5, 0.5, 0.5, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkdn1"]
+content_margin_top = 2.0
+bg_color = Color(0.501961, 0.501961, 0.501961, 0.752941)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4xrj"]
+content_margin_top = 2.0
+bg_color = Color(0.5, 0.5, 0.5, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plup1"]
+content_margin_top = 2.0
+bg_color = Color(0.5, 0.5, 0.5, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_xopg4"]
+resource_name = "PanelFade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/FadePanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qpavm"]
+resource_name = "PanelFade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/FadePanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"goto_game_menu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_yefv7"]
+resource_name = "PressStart_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../StartButton:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../StartButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7lbg5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../StartButton:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../StartButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer/FadePanel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyp2n"]
+_data = {
+"PanelFade_in": SubResource("Animation_xopg4"),
+"PanelFade_out": SubResource("Animation_qpavm"),
+"PressStart_in": SubResource("Animation_yefv7"),
+"RESET": SubResource("Animation_7lbg5")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sq65y"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_qpx2a")
+metadata/_edit_vertical_guides_ = [240.0]
+
+[node name="Title32" type="Sprite2D" parent="."]
+position = Vector2(240, 72)
+texture = ExtResource("1_msbx2")
+script = ExtResource("2_vofm3")
+
+[node name="Timer" type="Timer" parent="Title32"]
+wait_time = 0.833
+autostart = true
+
+[node name="StartButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = 128.0
+offset_right = 264.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "This button effect is an MPTM file!
+Woot!"
+theme = SubResource("Theme_haq8a")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_e38oj")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfn72")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iumlh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xkdn1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y4xrj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_plup1")
+disabled = true
+text = "Press Start
+"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="StartButton"]
+stream = ExtResource("4_knsan")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1dml1")
+autoplay = true
+mix_target = 2
+bus = &"TrackerMusic"
+script = ExtResource("7_axo7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Title32")
+libraries = {
+"": SubResource("AnimationLibrary_xyp2n")
+}
+speed_scale = 2.0
+
+[node name="FadeIn" type="Timer" parent="AnimationPlayer"]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="StartIn" type="Timer" parent="AnimationPlayer"]
+wait_time = 0.5
+one_shot = true
+
+[node name="FadePanel" type="Panel" parent="AnimationPlayer"]
+offset_right = 480.0
+offset_bottom = 272.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sq65y")
+metadata/_edit_lock_ = true
+
+[connection signal="timeout" from="Title32/Timer" to="Title32" method="_on_timer_timeout"]
+[connection signal="pressed" from="StartButton" to="StartButton/SFXPlayer" method="play"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="set_disabled" binds= [true]]
+[connection signal="finished" from="StartButton/SFXPlayer" to="SongPlayer" method="fade_bgm"]
+[connection signal="finished" from="StartButton/SFXPlayer" to="AnimationPlayer" method="play" binds= ["PanelFade_out"]]
+[connection signal="timeout" from="AnimationPlayer/FadeIn" to="AnimationPlayer/StartIn" method="start"]
+[connection signal="timeout" from="AnimationPlayer/FadeIn" to="AnimationPlayer" method="play" binds= ["PanelFade_in"]]
+[connection signal="timeout" from="AnimationPlayer/StartIn" to="AnimationPlayer" method="play" binds= ["PressStart_in"]]
