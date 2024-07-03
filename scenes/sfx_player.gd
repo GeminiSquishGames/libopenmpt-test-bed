@@ -45,6 +45,9 @@ func next_subsong():
 
     update_song_display()
 
+    old_pattern = playback.get_current_pattern()
+    old_row = playback.get_current_row()
+
 func _process(delta):
     if not has_stream_playback():
         return # could probably disable ditto
@@ -58,9 +61,10 @@ func _process(delta):
     elif new_pat < old_pattern:
         old_pattern = 0
         old_row = 0
-    elif old_row > new_row and new_pat == old_pattern: # single pattern loop happen
+    elif old_row > new_row and new_pat == old_pattern: # single pattern loop happen?
         old_row = 0
-    # 🙄 ugh... probably could be better but brain is boobdingus
+    # TODO: Think about other ways the patterns and rows could change and how to catch
+    # 🙄 ugh... could be better but brain is boobdingus
 
 
     if new_row == old_row + 1: # or maybe > old row, but what if pattern jump? hmm...
@@ -84,6 +88,8 @@ func _process(delta):
         old_row = playback.get_current_row()
         old_pattern = playback.get_current_pattern()
 
+        #TODO: could show future data and put play position in middle
+
 
 ## returns a string with all of the current row's data given a channel
 func get_chan_info(channel) -> String:
@@ -93,10 +99,12 @@ func get_chan_info(channel) -> String:
     var width = 13
     var pad = true
     var result = mpt_stream.format_pattern_row_channel(pat,row,chan,width,pad)
+    # highlight gives type strings rather than the human readable data
+    #var result = mpt_stream.highlight_pattern_row_channel(pat,row,chan,width,pad)
     return result
 
 
 func update_song_display():
-    # number and name of subsong
+    # number and name of subsong, updated in the label
     tracker_display.text = str(current_subsong) +": "+ \
     mpt_stream.get_subsong_names()[current_subsong]
